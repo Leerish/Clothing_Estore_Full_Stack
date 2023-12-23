@@ -14,6 +14,8 @@ import {
   Total,
 } from './checkout.styles';
 
+import PaymentForm from '../../components/payment-form/payment-form.component';
+
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
@@ -40,7 +42,8 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total>Total: ${cartTotal}</Total>
+      <Total>Total: INR{cartTotal}</Total>
+      <PaymentForm/>
     </CheckoutContainer>
   );
 };
